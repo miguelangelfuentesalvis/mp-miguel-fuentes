@@ -5,110 +5,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/output.css">
+    <script src="./src/scripts/habilidades.js" defer></script>
     <title>MP Miguel Fuentes 2</title>
+
 </head>
 
-<body class="bg-dark flex flex-wrap text-center p-4 h-screen overflow-y-auto">
-    <header class="text-soft-gray flex justify-between h-14 items-center">
-        <div class="p-2 w-12">
-            <img src="./src/images/js.webp" alt="logo de Miguel">
+<body class="bg-dark flex flex-col text-center min-h-screen overflow-y-auto text-gray-200">
+
+    <!-- BARRA DE NAVEGACIO -->
+
+    <header class="text-soft-gray flex justify-between items-center h-16 w-full px-6 shadow-md">
+
+        <div class="w-6">
+            <img src="./src/images/logomafa.png" alt="logo de Miguel" class="w-full">
         </div>
-        <nav class="flex flex-row text-center p-2">
-            <ul class="flex gap-2 text-1xl">
-                <li><a href="./index.html" class="hover:underline cursor-pointer hover:bg-highlight"
+
+        <input type="checkbox" id="menu-toggle" class="hidden peer">
+        <label for="menu-toggle" class="md:hidden text-gray-200 text-2xl cursor-pointer">
+            ☰
+        </label>
+
+        <nav class="fixed top-0 right-0 h-full w-48 sm:w-64 bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50
+            md:relative md:translate-x-0 md:h-auto md:w-auto md:bg-transparent md:shadow-none md:flex md:items-center p-4 md:p-0 
+            peer-checked:translate-x-0">
+
+            <label for="menu-toggle" class="md:hidden text-gray-200 text-2xl absolute top-4 right-4 cursor-pointer">
+                ✖
+            </label>
+
+            <ul
+                class="flex flex-col md:flex-row items-center gap-4 text-lg text-center w-full mt-20 md:mt-0 md:justify-center">
+                <li><a href="./index.html" class="hover:underline cursor-pointer hover:bg-highlight px-3 py-1 rounded"
                         target="_blank">Inicio</a></li>
-                <li><a href="#habilidades" class="hover:underline cursor-pointer hover:bg-highlight">Habilidades</a>
+                <li><a href="#habilidades"
+                        class="hover:underline cursor-pointer hover:bg-highlight px-3 py-1 rounded">Habilidades</a></li>
+                <li><a href="./proyectos.html"
+                        class="hover:underline cursor-pointer hover:bg-highlight px-3 py-1 rounded">Proyectos</a></li>
+
+                <li class="md:hidden">
+                    <a href="#formulario"
+                        class="flex items-center justify-center space-x-2 border border-white px-3 py-1 rounded-full transition-all duration-300 text-sm text-white bg-transparent hover:bg-white hover:text-black w-32">
+                        <span>Contacto</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="bg-neon-green rounded-full p-1">
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                            <path d="M15 9l-6 6" />
+                            <path d="M15 15v-6h-6" />
+                        </svg>
+                    </a>
                 </li>
-                <li><a href="#proyectos" class="hover:underline cursor-pointer hover:bg-highlight">Proyectos</a></li>
-               
+            </ul>
         </nav>
-        <div class="p-4">
+
+        <span class="hidden md:block">
             <a href="#formulario"
-                class="hover:underline w-4 bg-neon-green text-black py-1 p-4 rounded-lg cursor-pointer hover:bg-highlight">Contacto</a>
-        
-        </div>
+                class="flex items-center space-x-2 border border-white px-3 py-1 rounded-full transition-all duration-300 text-sm text-white bg-transparent hover:bg-highlight hover:text-black">
+                <span>Contacto</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="bg-neon-green rounded-full p-1">
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                    <path d="M15 9l-6 6" />
+                    <path d="M15 15v-6h-6" />
+                </svg>
+            </a>
+        </span>
     </header>
 
-    <section class="flex flex-col p-4 mx-auto">
-        <h1 class="text-xl font-styles: italic text-center text-highlight">Miguel Angel Fuentes Alvis <br> Desarrollador Full Stack</h1>
-        <img src="./src/images/Miguel_MP.png" alt="Foto de Miguel Fuentes" class="w-60 p-4">    
+    <!-- HERO -->
+
+    <section class="flex flex-col p-4 mx-auto relative bg-gradient-hero h-[40vh] overflow-hidden">
+        <h1 class="text-2xl font-styles: italic text-center text-highlight">Miguel Angel Fuentes Alvis <br>
+            Desarrollador
+            Full Stack</h1>
+        <img src="src/images/Miguel mp.png" alt="Foto de Miguel Fuentes"
+            class="w-60 left-1/2 bottom-0 absolute -translate-x-1/2 img-hero">
         <div>
-            <a href="#proyectos" class="bg-neon-green text-black py-1 p-4 rounded-lg cursor-pointer hover:bg-highlight">Proyectos</a>
-        </div>    
+            <a href="./proyectos.html"
+                class="bg-neon-green text-black py-1 p-8 rounded-full cursor-pointer hover:bg-highlight absolute bottom-[10px] left-1/2 block -translate-x-1/2">Proyectos</a>
+        </div>
     </section>
 
-    <div class="flex flex-col p-6 mx-auto" id="habilidades">
-        <div class="p-1">
-            <h2 class="text-2xl font-styles: italic text-center text-highlight py-1 p-4 ">Quien soy?</h2>
+    <!--  QUIEN SOY-->
+
+    <div class="flex flex-col items-center p-4 mx-auto text-center" id="habilidades">
+
+        <h2 class="text-3xl font-italic text-highlight py-2">¿Quién soy?</h2>
+
+        <div class="flex flex-col items-center w-full max-w-4xl gap-4 md:flex-row md:justify-between">
+
+            <div class="w-24 h-24 md:w-32 md:h-32 order-1">
+                <img src="./src/images/Miguel mp 1.png" alt="Foto decorativa" class="w-full h-full object-cover">
+            </div>
+
+            <div class="text-white px-4 max-w-lg order-2">
+                <p>
+                    Soy un apasionado de la programación y la tecnología, con un firme compromiso hacia el aprendizaje
+                    continuo y la innovación. Me defino como una persona responsable, dedicada y proactiva, siempre
+                    enfocado en mejorar mis habilidades y adaptarme a los desafíos del mundo digital en constante
+                    evolución. Además, encuentro en mi familia una fuente invaluable de inspiración y motivación, que me
+                    impulsa a crecer tanto en el ámbito profesional como en el personal.
+                </p>
+            </div>
+
+            <div class="w-24 h-24 md:w-32 md:h-32 order-3">
+                <img src="./src/images/Miguel mp 3.png" alt="Foto decorativa" class="w-full h-full object-cover">
+            </div>
         </div>
-        <div class="self-start shrink-0 basis-1/4 w-20 h-20 grid place-content-center p-3">
-            <img src="./src/images/Miguel mp 1.png" alt="Foto decorativa">
+
+        <div class="mt-4">
+            <a href="./proyectos.html"
+                class="bg-neon-green border border-transparent text-black py-1 px-8 rounded-full cursor-pointer hover:bg-highlight transition">
+                Proyectos
+            </a>
         </div>
-        <div class="text-center text-white p-2">
-            <p>
-                Soy un profecional que ama la programacion y a su famila, responsable y siempre a
-                la vangaurdia de los nuevos cambios que se producen en los diferentes skills que usamos para desarrollar nuestro trabajo cada dia.
-            </p>
-        </div>
-        <div class="self-end shrink-0 basis-1/4 w-20 h-20 grid place-content-center p-3">
-            <img src="./src/images/Miguel mp 3.png" alt="Foto decorativa">
-        </div>
-        <div class="p-1">
-            <a href="#proyectos" class="bg-neon-green text-black py-1 p-2 text-center rounded-lg cursor-pointer hover:bg-highlight">Proyectos Destacados</a>
-        </div>
-        
     </div>
-    <section class="w-full py-8 border border-amber-50">
-        <h2 class="text-highlight text-3xl p-4">My Skills?</h2>
-        <div class="flex">
-            <div class="min-h-40 w-full flex flex-wrap p-0 content-center border border-amber-50">
-                <div class="w-16 h-18 p-3 bg-deep-blue rounded-lg content-center"><img src="./src/images/html.png" alt="Foto decorativa" class="p-2"></div>
-                <div class="w-16 h-18 p-0 bg-deep-blue border rounded-lg content-center"><img src="./src/images/css.png" alt="Foto decorativa" class="p-5"></div>
-                <div class="w-16 h-18 p-0 bg-deep-blue border rounded-lg content-center"><img src="./src/images/js.webp" alt="Foto decorativa" class="p-5"></div>
-                <div class="w-16 h-18 p-0 bg-deep-blue border rounded-lg content-center"><img src="./src/images/reaccionar.png" alt="Foto decorativa" class="p-5"></div>
-                <div class="w-16 h-18 p-1 bg-deep-blue border rounded-lg content-center"><img src="./src/images/nodejs.png" alt="Foto decorativa" class="p-2"></div>
-                <div class="w-16 h-18 p-1 bg-deep-blue border rounded-lg content-center"><img src="./src/images/github.png" alt="Foto decorativa" class="p-4"></div>
-                <div class="w-16 h-18 p-1 bg-deep-blue border rounded-lg content-center"><img src="./src/images/tailwind.webp" alt="Foto decorativa" class="p-4"></div>
-                <div class="w-16 h-18 p-1 bg-deep-blue border rounded-lg content-center"><img src="./src/images/piton.png" alt="Foto decorativa" class="p-4"></div>     
+
+    <!--  MY SKILLIS -->
+
+    <section
+        class="w-full p-4 md:justify-center md:items-center md:flex md:flex-col lg:justify-center lg:items-center lg:flex lg:flex-col lg:p-8">
+
+        <h2 class="text-highlight text-3xl p-4 text-center">My Skills?</h2>
+
+        <div class="flex flex-row flex-nowrap items-start justify-between gap-4 w-full h-full">
+
+            <div class="flex flex-wrap gap-0.5  min-w-30 h-full items-center " id="skills">
+                <!-- Aquí van los iconos de skills -->
             </div>
-            <div class=" min-h-0 w-5/12 bg-deep-blue content-center">
-                    <p class="text-amber-50 text-2xl p-2 w-full">1</p>
-                    <p class="text-amber-50 text-1xl p-0 w-full">Año de Experiencia <br> en Proyectos</p>
-                
-                    <a href="./src/assets/CVprueba.pdf" download="CVprueba" class="hover:underline w-3 bg-neon-green text-black py-1 p-4rounded-lg cursor-pointer hover:bg-highlight">Descargar CV</a>
+
+            <div
+                class="w-4/12 min-w-32 flex-shrink-0 bg-deep-blue flex flex-col items-center text-center py-10 px-12  rounded-lg">
+                <p class="text-amber-50 text-2xl font-bold">1</p>
+                <p class="text-amber-50 text-1xl mt-1">Año de Experiencia</p>
+                <a href="./src/assets/CVprueba.pdf" download="CVprueba"
+                    class="mt-2.5 text-xs border bg-neon-green text-black py-1 px-8 rounded-full cursor-pointer transition-all hover:bg-highlight hover:text-black">
+                    Descargar CV
+                </a>
             </div>
-            
-        </div>      
+
+        </div>
     </section>
 
-    <div class="content-center w-80 mx-auto mt-8 rounded-lg p-6" id="proyectos">
-        <h2 class="text-highlight text-3xl">Estos son algunos de mis proyectos</h2>
-        <img src="" alt="Foto decorativa">
-        <img src="" alt="Foto decorativa">
-        <img src="" alt="Foto decorativa">
-       
-        <a href="" target="_blank" class="bg-neon-green text-black py-1 p-6 rounded-lg cursor-pointer hover:bg-highlight">Mis Proyectos Destacados</a>
+    <!-- PROYECTOS -->
 
-    </div>
+    <section class="w-full py-8 px-4 flex flex-col md:flex-row items-center md:justify-center md:px-20 lg:p-8"
+        id="proyectos">
+        <div class="w-full flex flex-row items-center justify-between gap-4 md:gap-8">
+            <!-- Contenedor de texto y botón -->
+            <div class="flex flex-col items-center justify-center text-center w-[50%] pb-4 md:pb-4 min-h-[200px]">
+                <h2 class="text-highlight text-lg md:text-3xl mb-2 md:mb-4">
+                    Estos son algunos de mis proyectos.
+                </h2>
+                <a href="./proyectos.html"
+                    class="bg-neon-green text-black font-semibold py-1 px-12 text-xs md:text-base rounded-full cursor-pointer transition-all hover:bg-highlight shadow-lg">
+                    Mis Proyectos
+                </a>
+            </div>
 
-    <div class="content-center bg-white w-80 mx-auto mt-8 rounded-lg p-6">
+            <!-- Contenedor de imágenes -->
+            <div class="flex gap-2 md:gap-4">
+                <div class="rounded-lg overflow-hidden">
+                    <img src="src/images/proyecto1.png" alt="Proyecto 1"
+                        class="w-[70px] h-[140px] md:w-[100px] md:h-[200px] object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="src/images/Proyecto 2.png" alt="Proyecto 2"
+                        class="w-[70px] h-[140px] md:w-[100px] md:h-[200px] object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="src/images/proyecto3.png" alt="Proyecto 3"
+                        class="w-[70px] h-[140px] md:w-[100px] md:h-[200px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO -->
+
+    <div class="content-center bg-white w-80 md:w-96 lg:w-[500px] mx-auto mt-8 rounded-lg p-4">
         <h2 class="text-black text-3xl text-center p-2">Vamos a Charlar</h2>
         <form id="formulario">
             <input
                 class="border border-gray-300 w-full bg-gray-100 text-black px-3 py-2 mb-4 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400"
-                type="text" placeholder="Tu Nombre">
+                type="text" placeholder="Tu Nombre" required>
+
             <input
-                class="border border-gray-300 w-full bg-gray-100 text-black px-3 py-2 mb-4 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 invalid:focus:ring-red-400"
-                type="email" placeholder="Email">
+                class="border border-gray-300 w-full bg-gray-100 text-black px-3 py-2 mb-4 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 invalid:ring-red-400"
+                type="email" placeholder="Email" required>
+
             <textarea
                 class="border border-gray-300 w-full bg-gray-100 text-black px-3 py-2 mb-4 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400"
-                type="text" placeholder="Deja tu comentario aquí">
-            </textarea>
-            <input class="w-full bg-neon-green text-black py-1 rounded-lg cursor-pointer hover:bg-highlight"
-                type="submit" placeholder="Enviar">
+                placeholder="Deja tu comentario aquí" required></textarea>
+
+            <input class="w-full bg-neon-green text-black py-1 rounded-full cursor-pointer hover:bg-highlight"
+                type="submit" value="Enviar">
         </form>
     </div>
-
 
 
 </body>
